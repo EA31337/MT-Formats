@@ -1,6 +1,6 @@
-//+------------------------------------------------------------------+ 
-//| History Files in FXT Format                                      | 
-//+------------------------------------------------------------------+ 
+//+------------------------------------------------------------------+
+//| History Files in FXT Format                                      |
+//+------------------------------------------------------------------+
 // Documentation on the format can be found in terminal Help (Client terminal - Auto Trading - Strategy Testing - History Files FXT).
 // However the obtained data shows that the data does not match the declared format.
 // In the eye catches the fact that the work is carried out over time in both formats: the new and the old MQL4.
@@ -11,86 +11,89 @@
 // Source: https://forum.mql4.com/ru/64199/page3
 struct TestHistoryHeader
 {
-   int               version;            // 405
-   char              copyright[64];      // copyright
-   char              description[128];   // server name
+   int               version;            // Version: 405
+   char              copyright[64];      // Copyright.
+   char              description[128];   // Server name.
 // 196
-   char              symbol[12];         
-   int               period;
-   int               model;              // for what modeling type was the ticks sequence generated
-   int               bars;               // amount of bars in history
-   int               fromdate;
-   int               todate;
-   int               totalTicks;
-   double            modelquality;       // modeling quality
+   char              symbol[12];         // Symbol.
+   int               period;             // Period of data aggregation in minutes.
+   int               model;              // Model - for what modeling type was the ticks sequence generated (0 - every tick).
+   int               bars;               // Bars - amount of bars in history.
+   int               fromdate;           // Date of the first tick.
+   int               todate;             // Date of the last tick.
+   int               totalTicks;         // Total ticks.
+   double            modelquality;       // Modeling quality
 // 240
-   //---- general parameters
-   char              currency[12];       // currency base
-   int               spread;
-   int               digits;
-   int               unknown1;
-   double            point;
-   int               lot_min;            // minimum lot size
-   int               lot_max;            // maximum lot size
-   int               lot_step;
-   int               stops_level;        // stops level value
-   int               gtc_pendings;       // instruction to close pending orders at the end of day
+   //---- General parameters.
+   char              currency[12];       // Currency base.
+   int               spread;             // Spread in points.
+   int               digits;             // Digits (default: 5).
+   int               unknown1;           // Unknown.
+   double            point;              // Point.
+   int               lot_min;            // Minimum lot size.
+   int               lot_max;            // Maximum lot size.
+   int               lot_step;           // Lot step.
+   int               stops_level;        // Stops level value.
+   int               gtc_pendings;       // Instruction to close pending orders at the end of day (default: True).
 // 292
-   //---- profit calculation parameters
-   int               unknown2;
-   double            contract_size;      // contract size
-   double            tick_value;         // value of one tick
-   double            tick_size;          // size of one tick
-   int               profit_mode;        // profit calculation mode        { PROFIT_CALC_FOREX, PROFIT_CALC_CFD, PROFIT_CALC_FUTURES }
-// 324 
-   //---- swap calculation
-   int               swap_enable;        // enable swap
-   int               swap_type;          // type of swap                   { SWAP_BY_POINTS, SWAP_BY_DOLLARS, SWAP_BY_INTEREST }
-   int               unknown3;
-   double            swap_long;
-   double            swap_short;         // swap overnight value
-   int               swap_rollover3days; // three-days swap rollover
-// 356   
-   //---- margin calculation
-   int               leverage;           // leverage
-   int               free_margin_mode;   // free margin calculation mode   { MARGIN_DONT_USE, MARGIN_USE_ALL, MARGIN_USE_PROFIT, MARGIN_USE_LOSS }
-   int               margin_mode;        // margin calculation mode        { MARGIN_CALC_FOREX,MARGIN_CALC_CFD,MARGIN_CALC_FUTURES,MARGIN_CALC_CFDINDEX };
-   int               margin_stopout;     // margin stopout level
-   int               margin_stopout_mode;// stop out check mode            { MARGIN_TYPE_PERCENT, MARGIN_TYPE_CURRENCY }
-   double            margin_initial;     // margin requirements
-   double            margin_maintenance; // margin maintenance requirements
-   double            margin_hedged;      // margin requirements for hedged positions
-   double            margin_divider;     // margin divider
-   char              margin_currency[12];// margin currency
-// 420   
-   //---- commission calculation
-   double            comm_base;          // basic commission
-   int               comm_type;          // basic commission type          { COMM_TYPE_MONEY, COMM_TYPE_PIPS, COMM_TYPE_PERCENT }
-   int               comm_lots;          // commission per lot or per deal { COMMISSION_PER_LOT, COMMISSION_PER_DEAL }
-// 436   
-   //---- for internal use
-   int               from_bar;           // fromdate bar number
-   int               to_bar;             // todate bar number
-   int               start_period[6];    // number of bar at which the smaller period modeling started
-   int               set_from;           // begin date from tester settings
-   int               set_to;             // end date from tester settings
+   //---- Profit calculation parameters.
+   int               unknown2;           // Unknown.
+   double            contract_size;      // Contract size.
+   double            tick_value;         // Value of one tick.
+   double            tick_size;          // Size of one tick.
+   int               profit_mode;        // Profit calculation mode        { PROFIT_CALC_FOREX, PROFIT_CALC_CFD, PROFIT_CALC_FUTURES }
+// 324
+   //---- Swap calculation.
+   int               swap_enable;        // Enable swap (default: True).
+   int               swap_type;          // Type of swap                   { SWAP_BY_POINTS, SWAP_BY_DOLLARS, SWAP_BY_INTEREST }
+   int               unknown3;           // Unknown.
+   double            swap_long;          // SwapLong.
+   double            swap_short;         // Swap overnight value.
+   int               swap_rollover3days; // Three-days swap rollover.
+// 356
+   //---- Margin calculation.
+   int               leverage;           // Leverage (default: 100).
+   int               free_margin_mode;   // Free margin calculation mode   { MARGIN_DONT_USE, MARGIN_USE_ALL, MARGIN_USE_PROFIT, MARGIN_USE_LOSS }
+   int               margin_mode;        // Margin calculation mode        { MARGIN_CALC_FOREX,MARGIN_CALC_CFD,MARGIN_CALC_FUTURES,MARGIN_CALC_CFDINDEX };
+   int               margin_stopout;     // Margin stopout level.
+   int               margin_stopout_mode;// Stop out check mode            { MARGIN_TYPE_PERCENT, MARGIN_TYPE_CURRENCY }
+   double            margin_initial;     // Margin requirements.
+   double            margin_maintenance; // Margin maintenance requirements.
+   double            margin_hedged;      // Margin requirements for hedged positions.
+   double            margin_divider;     // Margin divider.
+   char              margin_currency[12];// Margin currency.
+// 420
+   //---- Commission calculation.
+   double            comm_base;          // Basic commission
+   int               comm_type;          // Basic commission type          { COMM_TYPE_MONEY, COMM_TYPE_PIPS, COMM_TYPE_PERCENT }
+   int               comm_lots;          // Commission per lot or per deal { COMMISSION_PER_LOT, COMMISSION_PER_DEAL }
+// 436
+   //---- For internal use.
+   int               from_bar;           // FromdAte bar number.
+   int               to_bar;             // ToDate bar number.
+   int               start_period[6];    // Number of bar at which the smaller period modeling started.
+   int               set_from;           // Begin date from tester settings.
+   int               set_to;             // End date from tester settings.
 // 476
    //----
    int               end_of_test;
-   int               freeze_level;       // order's freeze level in points
-   int               generating_errors;  
-// 488   
+   int               freeze_level;       // Order's freeze level in points.
+   int               generating_errors;
+// 488
    //----
-   int               reserved[60];
+   int               reserved[60];       // Reserved - space for future use.
 };
+#pragma pack(push,1)
 struct TestHistory
 {
-   datetime          otm;                // время бара
-   double            open;               // значения OHLCV
+   datetime          otm;                // Bar datetime.
+   double            open;               // OHLCV values.
    double            high;
    double            low;
    double            close;
    long              volume;
-   int               ctm;                // текущее рабочее время внутри бара
-   int               flag;               // флаг запуска эксперта (0-бар модифицируем, а эксперта не запускаем)
+   int               ctm;                // The current time within a bar.
+   int               flag;               // Flag to launch an expert (0 - bar will be modified, but the expert will not be launched).
 };
+#pragma pack(pop)
+
