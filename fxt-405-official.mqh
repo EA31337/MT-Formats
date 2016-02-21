@@ -1,6 +1,12 @@
 //+------------------------------------------------------------------+ 
-//|                                                                  | 
+//| History Files in FXT Format                                      | 
 //+------------------------------------------------------------------+ 
+// In its operation, tester uses an *.FXT file with generated succession of bars.
+// Each record of the generated succession represents the bar status at either moment within one bar.
+// When modeling bars, tester takes other bars from this file and updates the current bar
+// or adds another one if it has just begun to be formed.
+// Source: http://www.metatrader4.com/en/trading-platform/help/autotrading/tester/tester_fxt
+A short description of the format is given below. It begins with the header:
 struct TestHistoryHeader 
   { 
    int               version;            // 405 
