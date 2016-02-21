@@ -56,8 +56,6 @@ int start()
  int day_=TimeDay(time_current);
  int hour_=TimeHour(time_current);
  int minute_=TimeMinute(time_current);
-2013.06.09 ©2011 amenbo the 3rd
-21／23
  int second_=TimeSeconds(time_current);
  Print("Time_in_symbols.sel_file:",year_,"年",month_,"月",day_,"日",hour_,"時
 ",minute_,"分",second_,"秒");
