@@ -101,12 +101,12 @@ struct TestHistoryHeader
    //---- For internal use.
    int               from_bar;           // Index of the first bar at which modeling started (0 for the first bar).
    int               to_bar;             // Index of the last bar at which modeling started (0 for the last bar).
-   int               start_period_m1;    // Bar index where modeling started using M1 bars (0 for the last bar).
-   int               start_period_m5;    // Bar index where modeling started using M5 bars (0 for the last bar).
-   int               start_period_m15;   // Bar index where modeling started using M15 bars (0 for the last bar).
-   int               start_period_m30;   // Bar index where modeling started using M30 bars (0 for the last bar).
-   int               start_period_h1;    // Bar index where modeling started using H1 bars (0 for the last bar).
-   int               start_period_h4;    // Bar index where modeling started using H4 bars (0 for the last bar).
+   int               start_period_m1;    // Bar index where modeling started using M1 bars (0 for the first bar).
+   int               start_period_m5;    // Bar index where modeling started using M5 bars (0 for the first bar).
+   int               start_period_m15;   // Bar index where modeling started using M15 bars (0 for the first bar).
+   int               start_period_m30;   // Bar index where modeling started using M30 bars (0 for the first bar).
+   int               start_period_h1;    // Bar index where modeling started using H1 bars (0 for the first bar).
+   int               start_period_h4;    // Bar index where modeling started using H4 bars (0 for the first bar).
    int               set_from;           // Begin date from tester settings (must be zero).
    int               set_to;             // End date from tester settings (must be zero).
 // 480
