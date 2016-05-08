@@ -57,9 +57,9 @@ struct TestHistoryHeader
    int               spread;             // Spread in points. Same as: MarketInfo(MODE_SPREAD)
    int               digits;             // Digits (default: 5). Same as: MarketInfo(MODE_DIGITS)
    int               padding1;           // Padding space - add 4 bytes to align to the next double.
-   double            point;              // Point size (e.g. 0.0000'1). Same as: MarketInfo(MODE_POINT)
+   double            point;              // Point size (e.g. 0.00001). Same as: MarketInfo(MODE_POINT)
    int               lot_min;            // Minimal lot size in centi lots (hundredths). Same as: MarketInfo(MODE_MINLOT)*100
-   int               lot_max;            // Maximal lot size in centi lots (hundredths). Same as: MarketInfo(MODE_MAXLOT) *100
+   int               lot_max;            // Maximal lot size in centi lots (hundredths). Same as: MarketInfo(MODE_MAXLOT)*100
    int               lot_step;           // Lot step in centi lots (hundredths). Same as: MarketInfo(MODE_LOTSTEP)*100
    int               stops_level;        // Stops level value (orders stop distance in points). Same as: MarketInfo(MODE_STOPLEVEL)
    int               gtc_pendings;       // GTC (Good till cancel) - instruction to close pending orders at end of day (default: False).

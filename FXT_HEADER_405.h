@@ -23,7 +23,7 @@ struct FXT_HEADER {                                // -- offset ---- size --- de
    UINT   minLotsize;                              //       272         4     min lot size in centi lots (hundredths)    = MarketInfo(MODE_MINLOT)  * 100
    UINT   maxLotsize;                              //       276         4     max lot size in centi lots (hundredths)    = MarketInfo(MODE_MAXLOT)  * 100
    UINT   lotStepsize;                             //       280         4     lot stepsize in centi lots (hundredths)    = MarketInfo(MODE_LOTSTEP) * 100
-   UINT   stopDistance;                            //       284         4     orders stop distance in points             = MarketInfo(MODE_STOPLEVEL)
+   UINT   stopsLevel;                              //       284         4     orders stop distance in points             = MarketInfo(MODE_STOPLEVEL)
    BOOL   pendingsGTC;                             //       288         4     close pending orders at end of day or GTC
    BYTE   reserved_3[4];                           //       292         4     (alignment to the next double)
 

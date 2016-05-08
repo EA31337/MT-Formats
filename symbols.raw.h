@@ -32,7 +32,7 @@ struct SYMBOL {                                    // -- offset ---- size --- de
    double contractSize;                            //      1704         8     lot size in units
    BYTE   unknown_9[16];                           //      1712        16
 
-   UINT   stopDistance;                            //      1728         4     stop distance level
+   UINT   stopsLevel;                              //      1728         4     stop distance level
    BYTE   unknown_10[12];                          //      1732        12
 
    double marginInit;                              //      1744         8     margin init        (0 = ContractSize)
