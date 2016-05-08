@@ -26,8 +26,7 @@ struct SYMBOL {                                    // -- offset ---- size --- de
 
    double swapLong;                                //      1680         8     swap long
    double swapShort;                               //      1688         8     swap short
-
-   UINT   unknown_7;                               //      1696         4     ?
+   UINT   3daysSwap;                               //      1696         4     Day of week to charge 3 days swap rollover.
    DWORD  unknown_8;                               //      1700         4
    double contractSize;                            //      1704         8     lot size in units
    BYTE   unknown_9[16];                           //      1712        16
